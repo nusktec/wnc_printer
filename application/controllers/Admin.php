@@ -72,7 +72,7 @@ class Admin extends CI_Controller
         $data['error'] = $error;
         $data['title'] = "Users";
         $data['scripts'] = array("users");
-        $data['users'] = $this->model_users->get_all_users();
+        $data['users'] = array_reverse($this->model_users->get_all_users());
         $data['contents'] = $this->load->view("admin/users", $data, true);
         $this->load->view("admin/template", $data);
     }
